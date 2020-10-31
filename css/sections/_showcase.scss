@@ -1,0 +1,84 @@
+.showcase {
+    height: 400px;
+    background-color: $color-primary;
+    color: $color-white;
+    position: relative;
+
+    &::before,
+    &::after {
+        content: '';
+        position: absolute;
+        height: 100px;
+        bottom: -70px;
+        right: 0;
+        left: 0;
+        background-color: $color-white;
+        transform: skewY(-3deg);
+        -webkit-transform: skewY(-3deg); // chrome and safari
+        -moz-transform: skewY(-3deg); // mozilla
+        -ms-transform: skewY(-3deg); // microsoft
+    }
+    h1 {
+        font-size: 40px;
+    }
+    p {
+        margin: 20px 0;
+    }
+    .grid {
+        grid-template-columns: 55% 45%;
+        gap: 30px;
+        overflow: visible;
+    }
+    &__form {
+        position: relative;
+        top: 60px;
+        height: 350px;
+        width: 400px;
+        padding: 40px;
+        z-index: 100;
+        justify-self: flex-end;
+        animation: slideInFromRight 1s ease-in;
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        .form-control {
+            margin: 15px 0;
+        }
+        input[type='text'],
+        input[type='email'] {
+            border: 0;
+            border-bottom: 1px solid #b4becb;
+            width: 100%;
+            padding: 3px;
+            font-size: 16px;
+
+            &:focus {
+                outline: none;
+            }
+        }
+    }
+    &__text {
+        animation: slideInFromLeft 1s ease-in;
+    }
+
+    @include mq-manager(tablet) {
+        height: auto;
+
+        .grid {
+            grid-template-columns: 1fr;
+            grid-template-rows: 1fr;
+        }
+        &__text {
+            text-align: center;
+            margin-top: 40px;
+            animation: slideInFromTop 1s ease-in;
+        }
+        &__form {
+            justify-self: center;
+            margin: auto;
+            animation: slideInFromBottom 1s ease-in;
+        }
+    }
+}

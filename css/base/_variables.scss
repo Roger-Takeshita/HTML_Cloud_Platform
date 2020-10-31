@@ -1,0 +1,22 @@
+/*
+
+= Global variables - css style
+:root {
+    --color-grey: #333;
+    --color-white: #fff;
+    --color-primary: #047aed;
+}
+
+_ To use global variables
+    background-color: var(--primary);
+*/
+
+$color-grey: #333;
+$color-black: #000;
+$color-white: #fff;
+$color-light: #f4f4f4;
+$color-primary: #047aed;
+$color-secondary: #1c3fa8;
+$color-dark: #002240;
+$color-success: #5cb85c;
+$color-error: #d9534f;

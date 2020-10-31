@@ -1,0 +1,45 @@
+.docs {
+    &__head {
+        img {
+            width: 200px;
+            justify-self: flex-end;
+        }
+    }
+    &__sub-head {
+        img {
+            width: 300px;
+            justify-self: flex-end;
+        }
+    }
+    &__main {
+        h3 {
+            margin: 20px 0;
+        }
+        .grid {
+            grid-template-columns: 1fr 2fr;
+            align-items: flex-start;
+        }
+        nav {
+            li {
+                font-size: 17px;
+                padding-bottom: 5px;
+                margin-bottom: 5px;
+                border-bottom: 1px solid $color-grey;
+            }
+            a {
+                color: $color-grey;
+                &:hover {
+                    font-weight: bold;
+                }
+            }
+        }
+    }
+    @include mq-manager(tablet) {
+        &__main {
+            .grid {
+                grid-template-columns: 1fr;
+                grid-template-rows: 1fr;
+            }
+        }
+    }
+}

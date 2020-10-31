@@ -1,0 +1,19 @@
+@mixin display-flex($space: center) {
+    display: flex;
+    justify-content: $space;
+    align-items: center;
+    height: 100%;
+}
+
+@mixin mq-manager($breakpoint) {
+    @if $breakpoint == tablet {
+        @media (max-width: 768px) {
+            @content;
+        }
+    }
+    @if $breakpoint == mobile {
+        @media (max-width: 500px) {
+            @content;
+        }
+    }
+}
